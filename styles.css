@@ -1,0 +1,466 @@
+/* リセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヒーローセクション */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffecd2 100%);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.heart-animation {
+    margin-top: 2rem;
+}
+
+.heart {
+    font-size: 3rem;
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    color: #fff;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* フェードインアニメーション */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.fade-in-delay {
+    animation: fadeIn 1.5s ease-in 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* メインメッセージセクション */
+.main-message {
+    padding: 100px 20px;
+    background: #fff;
+}
+
+.message-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.message-card h2 {
+    font-size: 2.5rem;
+    color: #d63447;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.message-text {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 2;
+}
+
+/* タイムラインセクション */
+.timeline {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #fff 0%, #ffecd2 100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #d63447;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: #ff9a9e;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 154, 158, 0.3);
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #d63447;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ギャラリーセクション */
+.gallery {
+    padding: 100px 20px;
+    background: #fff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.photo-placeholder {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.photo-placeholder p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.gallery-note {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+/* 特別なメッセージセクション */
+.special-message {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.special-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 60px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    color: #ff9a9e;
+    line-height: 0.5;
+    font-family: Georgia, serif;
+    opacity: 0.5;
+}
+
+.quote-mark.closing {
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+.special-text {
+    font-size: 1.8rem;
+    color: #333;
+    line-height: 2;
+    margin: 40px 0;
+    font-weight: 500;
+}
+
+.signature {
+    font-size: 1.3rem;
+    color: #d63447;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* 記念日セクション */
+.anniversary {
+    padding: 100px 20px;
+    background: #fff;
+}
+
+.anniversary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.anniversary-item {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.anniversary-item:hover {
+    transform: scale(1.05);
+}
+
+.date-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.date-circle .icon {
+    font-size: 3rem;
+}
+
+.anniversary-item h3 {
+    font-size: 1.3rem;
+    color: #d63447;
+    margin-bottom: 10px;
+}
+
+.anniversary-item .date {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.anniversary-note {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+/* フッター */
+.footer {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    text-align: center;
+    color: #fff;
+}
+
+.footer-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hearts {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.hearts span {
+    display: inline-block;
+    margin: 0 10px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.hearts span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hearts span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.footer-signature {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .message-card {
+        padding: 40px 30px;
+    }
+
+    .message-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .message-text {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .timeline-container {
+        padding-left: 40px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .special-card {
+        padding: 50px 30px;
+    }
+
+    .special-text {
+        font-size: 1.3rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .anniversary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .message-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .special-text {
+        font-size: 1.1rem;
+    }
+}
