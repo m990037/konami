@@ -235,6 +235,14 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 1;
+}
+
 .photo-placeholder {
     aspect-ratio: 1;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
