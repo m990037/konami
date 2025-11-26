@@ -471,4 +471,67 @@ body {
     .special-text {
         font-size: 1.1rem;
     }
+
+    .game-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .game-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ゲームセクション */
+.game-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.game-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.game-card h3 {
+    font-size: 2.2rem;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.game-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.game-link {
+    display: inline-block;
+    padding: 18px 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.game-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
